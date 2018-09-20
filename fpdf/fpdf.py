@@ -1989,7 +1989,7 @@ class FPDF(object):
             if not instance(s, str):
                 s = s.encode("latin1")    # default encoding (font name and similar)
             s += "\n"
-        self.stream.write(s)
+        self.stream.write(s.encode(encoding='UTF-8'))
     @check_page
     def interleaved2of5(self, txt, x, y, w=1.0, h=10.0):
         "Barcode I2of5 (numeric), adds a 0 if odd lenght"
